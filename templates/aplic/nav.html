@@ -14,11 +14,17 @@
                         </li>
                        
                         <li>
-                            <a href="/clientes"><i class="fa fa-dashboard fa-fw"></i> Clientes</a>
+                            <a href="/usuarios"><i class="fa fa-dashboard fa-fw"></i>Usuarios</a>
                         </li>
                          <li>
-                            <a href="/clientes"><i class="fa fa-dashboard fa-fw"></i> Facturas</a>
+                            <a href="/terceros"><i class="fa fa-dashboard fa-fw"></i> Terceros</a>
                         </li>
+                        <li>
+                            <a href="/kardex"><i class="fa fa-dashboard fa-fw"></i>Kardex</a>
+                        </li>
+                        <li>
+                            <a href="/productos"><i class="fa fa-dashboard fa-fw"></i>Productos</a>
+                        </li>                        
                         {% if  request.user.is_staff  %}    
                             <li>
                                 <a href="#"><i class="fa fa-cogs"></i> Admin<span class="fa arrow"></span></a>

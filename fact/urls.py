@@ -20,9 +20,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r"^clientes/$",'aplic.views.clientes'),
-    url(r'^clientes/crear/$','aplic.views.Crear_cliente'),
-    url(r'^clientes/editar/(?P<id>\d+)/$','aplic.views.prueba'),
+    url(r"^terceros/$",'aplic.views.terceros'),
+    url(r"^kardex/$",'aplic.views.kardex'),
+    url(r'^kardex/crear/$','aplic.views.Crear_kardex'),
+    url(r'^terceros/crear/$','aplic.views.Crear_tercero'),
+    url(r"^usuarios/$",'aplic.views.usuarios'),
+    url(r'^usuarios/crear/$','aplic.views.Crear_usuario'),
+    url(r"^productos/$",'aplic.views.productos'),
+    url(r'^productos/crear/$','aplic.views.Crear_producto'),
+    url(r'^usuarios/editar/(?P<id>\d+)/$','aplic.views.prueba'),
     url(r'^parametro/crear/$','aplic.views.Crear_parametro'),
     url(r'^$','aplic.views.index',name='incio'),
     url(r'^login/$','auten.views.login_view',name='vista_login'),

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Lista De Terceros</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2> Lista De Terceros </h2>
+		<br/>
+		<a  href="/terceros/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Nombre/Razon Social </th>
+		    <th>Email</th>
+		  </tr> 
+		{% for cli in terceros %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.RazonSocial  %} 
+		     	{{cli.RazonSocial}}
+		    {% endif %}
+		   </td>
+		   <td>
+		   	{{cli.Email}}
+		   </td>	
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>

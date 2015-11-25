@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Lista De Usuarios</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2> Lista De Usuarios </h2>
+		<br/>
+		<a  href="/usuarios/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Nombre/Razon Social </th>
+		    <th>Email</th>
+		    <th>Telefonos</th>
+		  </tr> 
+		{% for cli in usuarios %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.RazonSocial  %} 
+		     	{{cli.RazonSocial}}
+		    {% endif %}
+		    {% if cli.Nombres  %} 
+                {{cli.Nombres}}  {{cli.Apellidos}} 
+            {% endif %}
+		   </td>
+		   <td>
+		   	{{cli.Email}}
+		   </td>
+		   <td>
+            {{cli.Telefonos}}
+           </td>	
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>

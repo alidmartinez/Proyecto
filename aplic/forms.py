@@ -5,8 +5,24 @@ from aplic.models import *
 class ParametroForm(forms.Form):
     pass
 
-class ClienteForm(ModelForm): 
+class UsuarioForm(ModelForm): 
    class Meta:
-        model=Cliente
+        model=Usuario
+        exclude=["Eliminado"]
+
+
+class TerceroForm(ModelForm): 
+   class Meta:
+        model=Tercero
         exclude=["eliminado"]
 
+
+class KardexForm(ModelForm): 
+   class Meta:
+        model=Kardex
+        exclude=["Eliminado"]
+
+class ProductoForm(ModelForm): 
+   class Meta:
+        model=Producto
+        exclude=["Eliminado"]

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Lista De Productos</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2> Lista De Productos </h2>
+		<br/>
+		<a  href="/productos/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Id Producto </th>
+		    <th>Descripcion Producto </th>
+		    <th>ID Tipo Producto</th>
+		    <th>ID Categoria Producto</th>
+		    <th>ID Estado Producto</th>
+		  </tr> 
+		{% for cli in productos %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.refProducto  %} 
+		     	{{cli.refProducto}}
+		    {% endif %}
+		    </td>
+		   <td>
+		   	{{cli.descProducto}}
+		   </td>
+		   <td>
+            {{cli.idTipoProducto}}
+           </td>
+           <td>
+            {{cli.idCategoriaProducto}}
+           </td>
+           <td>
+            {{cli.idEstadoProducto}}
+           </td>	
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Kardex</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2> Kardex</h2>
+		<br/>
+		<a  href="/kardex/crear" class="btn btn-primary" > Adicionar </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Codigo Kardex </th>
+		    <th>Tipo Movimiento </th>
+		    <th>Fecha</th>
+		    <th>Tercero</th>
+		    <th>Producto</th>
+		    <th>Cantidad Producto</th>
+		    <th>Valor Unitario</th>
+		    <th>Estado Kardex</th>
+		    <th>Valor Publico</th>
+		  </tr> 
+		{% for cli in kardex %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.CodKardex  %} 
+		     	{{cli.CodKardex}}
+		    {% endif %}
+		    </td>
+		   <td>
+		   	{{cli.TipoMovimiento}}
+		   </td>
+		   <td>
+            {{cli.Fecha}}
+           </td>
+           <td>
+            {{cli.CodTercero}}
+           </td>
+           <td>
+            {{cli.CodProduc}}
+           </td>
+           <td>
+            {{cli.CantProduc}}
+           </td>
+           <td>
+            {{cli.ValorUnitario}}
+           </td>
+           <td>
+            {{cli.EstadoKardex}}
+           </td>
+           <td>
+            {{cli.ValorPublico}}
+           </td>
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>
